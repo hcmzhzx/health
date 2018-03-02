@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>保险好声音</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://at.alicdn.com/t/font_568808_mi4sp4hjpqlg14i.js"></script>
+</head>
+<body>
+<div id="home" class="flexitemv mainbox wrap">
+    <div class="flipbox">
+        <div class="bor">
+            <div class="flex centerv flip">
+                <div class="user-img"><img src="../image/user.jpg" class="fitimg"></div>
+                <div class="flex text">恭喜&ensp;<span class="flexv name">王尼玛个是</span>&ensp;给&ensp;<span
+                        class="flexv name">佳佳小胡的</span>&ensp;点赞&ensp;！3秒前</span></div>
+            </div>
+            <div class="flex centerv flip">
+                <div class="user-img"><img src="../image/user.jpg" class="fitimg"></div>
+                <div class="flex text">恭喜&ensp;<span class="flexv name">王尼玛个</span>&ensp;给&ensp;<span
+                        class="flexv name">佳佳小胡</span>&ensp;点赞&ensp;！3秒前</span></div>
+            </div>
+            <div class="flex centerv flip">
+                <div class="user-img"><img src="../image/user.jpg" class="fitimg"></div>
+                <div class="flex text">恭喜&ensp;<span class="flexv name">王尼玛</span>&ensp;给&ensp;<span class="flexv name">小好胡</span>&ensp;点赞&ensp;！3秒前</span>
+                </div>
+            </div>
+            <div class="flex centerv flip">
+                <div class="user-img"><img src="../image/user.jpg" class="fitimg"></div>
+                <div class="flex text">恭喜&ensp;<span class="flexv name">尼玛</span>&ensp;给&ensp;<span class="flexv name">小胡</span>&ensp;点赞&ensp;！3秒前</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flexv center textbox">
+        <img src="../image/up.png" class="fitimg">
+    </div>
+    <div class="flexv center userbox">
+        <div class="userbox">
+            <div class="user-bj"></div>
+            <div class="user-img">
+                <img src="../image/user.jpg" class="fitimg">
+            </div>
+        </div>
+        <div class="firm-info"><span class="firm">太平洋人寿保险</span>&nbsp;<span class="name">轩轩</span></div>
+    </div>
+    <div class="around btnbox">
+        <a href="join.html" class="flex center btn cj">我要参加</a>
+        <a href="javascript:;" class="flexv center zan">
+            <img src="../image/zan.png" class="fitimg">
+            <span class="flexv center number">0</span>
+        </a>
+        <a href="ranking.html" class="flex center btn phb">排行榜</a>
+    </div>
+    <div class="flexv mainbox listbox">
+        <div class="flex centerv list">
+            <div class="flex user-img"><img src="../image/user.jpg" class="fitimg"></div>
+            <div class="flexitemv text">
+                <div class="felx info">
+                    <span class="name">人寿保险经理</span>
+                    <span>02-10&nbsp;17:20</span>
+                </div>
+                <h3 class="flexv">买保险买保险买保险买保险,买保险买保险买保险买保险买保险买保险</h3>
+            </div>
+            <a href="javascript:;" class="flex center zan">
+                <svg class="hsy" aria-hidden="true">
+                    <use xlink:href="#hsy-praise"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <!--创建弹窗-->
+    <div class="flex center alert cj-alert">
+        <div class="flexv center content found">
+            <div class="found-bj">
+                <img src="../image/sustain.png" class="fitimg">
+            </div>
+            <div class="flexv center box">
+                <div class="qrcode"><img src="../image/qrcode.jpg" class="fitimg"></div>
+                <p>长按识别二维码</p>
+                <p>关注活动进程</p>
+            </div>
+            <span class="close"></span>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    // 滚动显示
+    setInterval(function () {
+        var objh = $('.flip').height();
+        $(".flipbox .bor").append($(".flipbox .bor .flip").first().height(0).animate({"height": objh + "px"}, 500));
+    }, 2000);
+
+    // 支持弹窗
+    var number = 0;
+    $(".zan").click(function () {
+        $(".number").text((number += 1));
+        $(".cj-alert").addClass("show").removeClass("hide");
+    });
+
+    // 关闭按钮
+    $(".close").click(function () {
+        $(".alert").addClass("hide").removeClass("show");
+    });
+
+    //dianz
+    $("a.zan").click(function () {
+        var list = '<div class="flex centerv list"><div class="flex user-img"><img src="../image/user.jpg" class="fitimg"></div><div class="flexitemv text"><div class="felx info"><span class="flexv name">人寿保险经理</span><span class="time">02-10&nbsp;17:20</span></div><h3 class="flexv">买保险买保险买保险买保险,买保险买保险买保险买保险买保险买保险</h3></div><a href="javascript:;" class="flex center zan"><svg class="hsy" aria-hidden="true"><use xlink:href="#hsy-praise"></use></svg></a></div>';
+        $(".listbox").append(list);
+    })
+</script>
+</html>

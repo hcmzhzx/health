@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我要参加</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://at.alicdn.com/t/font_568808_mi4sp4hjpqlg14i.js"></script>
+</head>
+<body>
+<div id="join" class="flexitemv mainbox wrap">
+	<div class="flexv center head">
+        <img src="../image/up.png" class="fitimg">
+	</div>
+	<form action="index.html" class="flexitemv center menu" onsubmit="return false">
+		<label class="flex input names">
+			<span class="flex centerv">您的姓名：</span>
+			<input type="text" name="name" data-rule="cname" data-errmsg="请输入2-4位中文姓名" placeholder="请填写您的姓名" class="flexitem">
+		</label>
+		<label class="flex input phone">
+			<span class="flex centerv">手机号码：</span>
+			<input type="tel" name="phone" data-rule="m" data-errmsg="请输入正确手机号" placeholder="请输入您的电话号码" maxlength="11" class="flexitem">
+		</label>
+		<label class="flex input companys">
+			<span class="flex centerv">所在保险公司：</span>
+			<input class="flexitem cenk" type="text" data-rule="*" data-errmsg="请选择公司" readonly="readonly" unselectable="on" onfocus="this.blur()" placeholder="请选择公司">
+		</label>
+		<a href="javascript:;" class="flex center submit">提交信息</a>
+		<div class="flex center footer">参与活动则代表同意<a href="javascript:;" class="flex rule-btn">活动规则></a></div>
+	</form>
+	<!--公司品牌-->
+	<div id="brand" class="flexv dialog_box hidens">
+		<div class="flex center heads">
+			<a href="javascript:;" class="flex center back"><svg class="hsy" aria-hidden="true"><use xlink:href="#hsy-zjt"></use></svg></a>
+			<h1 class="flexitem center" style="margin-left:-6vw;">选择公司</h1>
+		</div>
+		<ul class="flexitemv mainbox company" style="padding-top: 20px"></ul>
+		<ul class="flexitemv lettrt">
+			<li class="flexitem center"><a href="#">#</a></li>
+			<li class="flexitem center"><a href="#A">A</a></li>
+			<li class="flexitem center"><a href="#B">B</a></li>
+			<li class="flexitem center"><a href="#C">C</a></li>
+			<li class="flexitem center"><a href="#D">D</a></li>
+			<li class="flexitem center"><a href="#E">E</a></li>
+			<li class="flexitem center"><a href="#F">F</a></li>
+			<li class="flexitem center"><a href="#G">G</a></li>
+			<li class="flexitem center"><a href="#H">H</a></li>
+			<li class="flexitem center"><a href="#I">I</a></li>
+			<li class="flexitem center"><a href="#J">J</a></li>
+			<li class="flexitem center"><a href="#K">K</a></li>
+			<li class="flexitem center"><a href="#L">L</a></li>
+			<li class="flexitem center"><a href="#M">M</a></li>
+			<li class="flexitem center"><a href="#N">N</a></li>
+			<li class="flexitem center"><a href="#O">O</a></li>
+			<li class="flexitem center"><a href="#P">P</a></li>
+			<li class="flexitem center"><a href="#Q">Q</a></li>
+			<li class="flexitem center"><a href="#R">R</a></li>
+			<li class="flexitem center"><a href="#S">S</a></li>
+			<li class="flexitem center"><a href="#T">T</a></li>
+			<li class="flexitem center"><a href="#U">U</a></li>
+			<li class="flexitem center"><a href="#V">V</a></li>
+			<li class="flexitem center"><a href="#W">W</a></li>
+			<li class="flexitem center"><a href="#X">X</a></li>
+			<li class="flexitem center"><a href="#Y">Y</a></li>
+			<li class="flexitem center"><a href="#Z">Z</a></li>
+		</ul>
+	</div>
+	<!--活动规则-->
+	<div class="flex center alert rule-alert">
+		<div class="flexv center content rule">
+			<div class="flex center title">活动规则</div>
+			<div class="flexv centerh texbox">
+				<p class="tex-h">活动时间：</p>
+				<p class="tex">2018年2月14日-2018年2月28日</p>
+				<p class="tex-h">规则说明：</p>
+				<p class="tex">1、发现恶意刷票等不合规行为，查实后将会取消活动参赛与资格，成绩清零；</p>
+				<p class="tex">2、本次活动最终解释权归中<span>保会</span>宣传办所有</p>
+			</div>
+			<span class="close"></span>
+		</div>
+	</div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script src="../js/functions.js"></script>
+<script src="../js/contact.js"></script>
+<script src="../js/brand.js"></script>
+<script type="text/javascript">
+    // 活动规则
+    $(".rule-btn").click(function () {
+        $(".rule-alert").show();
+        $(".content").addClass("trans");
+    });
+    // 关闭按钮
+    $(".close").click(function () {
+        $(".alert").hide();
+    });
+    // 验证表单
+    var checker = new checkForm({
+        form : '.menu',
+        btn : '.submit',
+        error : function (ele,err){showMsg(err);},
+        complete : function (ele){
+            var post = $(ele).serializeArray();
+
+        }
+    });
+	
+
+</script>
+</html>
